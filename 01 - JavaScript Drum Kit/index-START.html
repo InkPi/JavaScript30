@@ -58,7 +58,33 @@
   <audio data-key="76" src="sounds/tink.wav"></audio>
 
 <script>
+  /*
+    this is one way
+    Best way of neat writing is in finished
+  */
+ 
+  // listen to any key (not just data-key)
+  window.addEventListener('keydown', function(e) {
+    //console.log(e.keyCode);
+    //const audio= document.querySelector(`audio[data-key="65"]`);
+    //w/ es6 template strings
+    const audio= document.querySelector(`audio[data-key="${e.keyCode}"]`);
+    const key= document.querySelector(`.key[data-key="${e.keyCode}"]`);
+    if(!audio) return; //stop func from running
+    audio.currentTime= 0; //rewinds
+    audio.play(); //plays sound. Only replay after it is completed
+    //console.log(audio);
+    key.classList.add('playing');
+  });
 
+  function removeTransition(e) {
+    if(e.propertyName !== 'transform') return; //skip
+    this.classList.remove('playing');
+  }
+
+  const keys = document.querySelectorAll('.key');
+  //have to loop thru
+  keys.forEach(key => (key.addEventListener('transitionend', removeTransition)));
 </script>
 
 
