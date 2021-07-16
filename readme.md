@@ -81,7 +81,15 @@ Thanks!
 ## Day 1
 CSS Transition
 Key Code
-Custom HTML5 data attribute (or any custom)
+Custom HTML5 data attribute
+addEventListener
+Attribute Selector
+querySelector + attribute selector
+Audio .play()
+Rewind audio
+Adding CSS Class w/ JS
+Removing CSS Property 
+HTMLMediaElement (currentTime)
 
 ## Day 2
 

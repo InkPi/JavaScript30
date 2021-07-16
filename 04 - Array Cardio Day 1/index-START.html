@@ -52,27 +52,24 @@
     }
 
     let inventorAgeFromBig = inventors.sort(compareNumbers);
+    
 
     // Array.prototype.reduce()
     // 4. How many years did all the inventors live all together?
     let totalInventorAges;
-    let eachInventorAge;
-    let addedAges;
+    let eachInventorAge = [];
+    let addedAges= 0;
 
     inventors.forEach(inventor => {
-      console.log(inventor.passed - inventor.year);
+      eachInventorAge.push(inventor.passed - inventor.year);
     });
 
-    // function addAge(inventor) {
-    //   return inventor.passed - inventor.year;
-    //   //return eachInventorAge;
-    // }
+    const reducer = (accumulator, currentValue) => accumulator + currentValue;
 
-    // addedAges= inventors.reduce(addAge);
-
-    // console.log("years", inventors.passed - inventors.year);
+    addedAges= eachInventorAge.reduce(reducer);
 
     console.log("addedAges", addedAges);
+
 
     // 5. Sort the inventors by years lived
 
