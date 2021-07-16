@@ -79,6 +79,24 @@ Thanks!
 # Journal
 
 ## Day 1
+CSS Transition
+Key Code
+Custom HTML5 data attribute (or any custom)
+
 ## Day 2
 
 ## Day 3
+Dynamic CSS Applied
+CSS vars updated w/ JS
+    * update itself
+(Sass runs on compiled time instead)
+CSS:
+    * :root {..}
+        * default values -- ($ in SaSS)
+    * using var
+NodeList
+    * Different from Array
+addEventListener
+this.dataset
+    * data-__
+Select a variable
