@@ -26,6 +26,7 @@
       { first: 'Lise', last: 'Meitner', year: 1878, passed: 1968 },
       { first: 'Hanna', last: 'Hammarström', year: 1829, passed: 1909 }
     ];
+    console.log("inventors", inventors);
 
     const people = [
       'Bernhard, Sandra', 'Bethea, Erin', 'Becker, Carl', 'Bentsen, Lloyd', 'Beckett, Samuel', 'Blake, William', 'Berger, Ric', 'Beddoes, Mick', 'Beethoven, Ludwig',
@@ -52,7 +53,7 @@
     }
 
     let inventorAgeFromBig = inventors.sort(compareNumbers);
-    
+
 
     // Array.prototype.reduce()
     // 4. How many years did all the inventors live all together?
@@ -64,14 +65,49 @@
       eachInventorAge.push(inventor.passed - inventor.year);
     });
 
+    // console.log("each inventor age", eachInventorAge);
+
     const reducer = (accumulator, currentValue) => accumulator + currentValue;
 
     addedAges= eachInventorAge.reduce(reducer);
 
-    console.log("addedAges", addedAges);
-
 
     // 5. Sort the inventors by years lived
+    let sortedAge;
+    let sortedInventorsByAge= [];
+
+    // sortedAge = eachInventorAge.sort();
+
+    // console.log("sortedAge", sortedAge);
+
+    console.log("inventors", inventors);
+
+    // console.log("sorted inventors", inventors.sort(compareAge));
+
+    function compareAge(a, b) {
+      a= a.passed-a.year;
+      b= b.passed-b.year;
+      return a - b;
+    }
+
+    for (let s=0; s < inventors.length; s++) {
+      let age= inventors[s].passed - inventors[s].year;
+
+      if (sortedAge[s] == age) {
+        //console.log("sorted", inventors[s]);
+        sortedInventorsByAge.push(inventors[s]);
+      } 
+    }
+
+    //console.log("sorted", sortedInventorsByAge);
+
+    // inventors.forEach(inventor => {
+      
+    //   //if(inventor.passed - inventor.year) {};
+    // });
+
+    //console.log("sortedAge", sortedAge);
+
 
     // 6. create a list of Boulevards in Paris that contain 'de' anywhere in the name
     // https://en.wikipedia.org/wiki/Category:Boulevards_in_Paris
@@ -83,6 +119,7 @@
     // 8. Reduce Exercise
     // Sum up the instances of each of these
     const data = ['car', 'car', 'truck', 'truck', 'bike', 'walk', 'car', 'van', 'bike', 'walk', 'car', 'van', 'car', 'truck' ];
+
 
   </script>
 </body>
