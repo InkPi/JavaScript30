@@ -5,10 +5,10 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "type": "pwa-msedge",
+            "type": "pwa-chrome",
             "request": "launch",
             "name": "Open index-START.html",
-            "file": "/Users/mac/devprojs/30dayJS/JavaScript30/04 - Array Cardio Day 1/index-START.html"
+            "file": "/Users/mac/devprojs/30dayJS/JavaScript30/04_ArrayCardioDay1/index-START.html"
         }
     ]
 }
